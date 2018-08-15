@@ -10,6 +10,7 @@ import java.util.Queue;
  * Created by acquaint on 14/8/18.
  */
 
+@SuppressWarnings("ALL")
 public class FilterHeaderTrailerInputStream extends FilterInputStream
 {
     private Queue<Integer> readBuffer = new LinkedList<Integer>();

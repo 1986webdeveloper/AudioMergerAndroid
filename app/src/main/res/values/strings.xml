@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">AudioMerger</string>
+    <string name="toast_msg">Please Select atleast two files</string>
+    <string name="select_file">Select File</string>
 </resources>

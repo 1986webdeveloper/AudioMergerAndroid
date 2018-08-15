@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.constraint.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -13,7 +14,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/imgupload"
-        android:text="Select File"
+        android:text="@string/select_file"
         android:padding="10dp"
         android:background="@color/colorPrimary"
         android:textColor="@android:color/white"
@@ -36,10 +37,11 @@
         android:layout_height="wrap_content" />
     <TextView
         app:layout_constraintTop_toBottomOf="@id/tv_fileTwo"
+        android:gravity="center"
         android:text="@string/app_name"
         android:visibility="visible"
         android:id="@+id/tv_fileResult"
-        android:padding="5dp"
+        android:padding="15dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
     <ProgressBar
@@ -51,12 +53,60 @@
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         android:layout_marginBottom="20dp"/>
-
-    <SeekBar
+    <RelativeLayout
         android:visibility="gone"
+        android:id="@+id/rv_seekbar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/imgupload"/>
+        app:layout_constraintTop_toBottomOf="@id/imgupload"
+        >
+        <TextView
+            android:id="@+id/tv_pass"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            />
+        <TextView
+            android:id="@+id/tv_duration"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            />
+        <TextView
+            android:id="@+id/tv_due"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true"
+            tools:ignore="RelativeOverlap" />
+        <LinearLayout
+            android:layout_below="@id/tv_pass"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+        <ImageView
+            android:id="@+id/iv_play"
+            android:layout_alignParentLeft="true"
+            android:src="@drawable/ic_action_pause"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:contentDescription="@string/app_name" />
+        <SeekBar
+            android:thumbTint="@color/colorPrimary"
+            android:layout_gravity="center"
+            android:layout_centerInParent="true"
+            android:id="@+id/seek_bar"
+            android:layout_width="wrap_content"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            />
+
+        <ImageView
+            android:id="@+id/iv_stop"
+            android:src="@drawable/ic_action_stop"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:contentDescription="@string/app_name" />
+        </LinearLayout>
+    </RelativeLayout>
 
 </android.support.constraint.ConstraintLayout>
